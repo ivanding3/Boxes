@@ -18,14 +18,13 @@ background = pygame.transform.scale(pygame.image.load('Untitled.jpg'),(resolutio
 box = pygame.transform.scale(pygame.image.load('Green.webp'),(200,200))
 box_rect = pygame.Rect((1000,500),(200,200))
 
-floor = pygame.transform.scale(pygame.image.load('Green.webp'),(screen_width,200))
-floor_rect = pygame.Rect((0,screen_height-200),(floor.get_size()))
+
 
 margin = 5
 
 
-
-while True:
+game_running = True
+while game_running:
     
     dt = clock.tick(1000)/1000
     keys_pressed = pygame.key.get_pressed()
@@ -38,11 +37,8 @@ while True:
         player.y_accel = 500 
     else:
         player.y_accel = 0
-
     player.x_vel += player.x_accel*dt
     player.x += player.x_vel*dt
-
-
 
     #movement y
     if keys_pressed[pygame.K_a] == True: #
@@ -51,7 +47,6 @@ while True:
         player.x_accel = 500     
     else:
         player.x_accel = 0
-
     player.y_vel += player.y_accel*dt
     player.y += player.y_vel*dt    
 
@@ -60,63 +55,58 @@ while True:
 
 
 
-    #collisions??
-    if player.bottom > floor_rect.top:
-        print(player.bottom, floor_rect.top)
-        player.y_vel = 0
-        player.bottom = floor_rect.top
-        player.y = player.top
-    #if player.right 
+
 
     def collision(collider):
         if True:
             # Checks if either the left or right side of the player is over the collider 
             if (
-                player.right >= collider.col_rect.left + margin and player.right <= collider.col_rect.right 
-                or player.left <= collider.col_rect.right - margin and player.left >= collider.col_rect.left ): 
+                player.right >= collider.rect.left + margin and player.right <= collider.rect.right 
+                or player.left <= collider.rect.right - margin and player.left >= collider.rect.left ): 
                 #top side
-                if player.bottom < collider.col_rect.bottom and player.bottom >= collider.col_rect.top +1 : 
+                if player.bottom < collider.rect.bottom and player.bottom >= collider.rect.top +1 : 
                     if player.y_accel > 0:
                         player.y_accel = 0
                     if player.y_vel > 0:
                         player.y_vel = 0
-                    player.y = collider.col_rect.top - player.img.get_height()
+                    player.y = collider.rect.top - player.img.get_height()
                    
                 #bottom side
-                elif player.top > collider.col_rect.top and player.top <= collider.col_rect.bottom +1:
+                elif player.top > collider.rect.top and player.top <= collider.rect.bottom +1:
                     if player.y_accel < 0:
                         player.y_accel = 0
                     if player.y_vel < 0:
                         player.y_vel = 0
-                    player.y = collider.col_rect.bottom 
+                    player.y = collider.rect.bottom 
                     
                 
             # Checks if either the top or bottom side of the player is over the collider
             if (
-                player.bottom >= collider.col_rect.top + margin and player.bottom <= collider.col_rect.bottom 
-                or player.top <= collider.col_rect.bottom - margin and player.top >= collider.col_rect.top ):
+                player.bottom >= collider.rect.top + margin and player.bottom <= collider.rect.bottom 
+                or player.top <= collider.rect.bottom - margin and player.top >= collider.rect.top ):
                 #left side
-                if player.right < collider.col_rect.right and player.right >= collider.col_rect.left +1:
+                if player.right < collider.rect.right and player.right >= collider.rect.left +1:
                     if player.x_accel > 0:
                         player.x_accel = 0
                     if player.x_vel > 0:
                         player.x_vel = 0
-                    player.x = collider.col_rect.left-player.img.get_width() 
+                    player.x = collider.rect.left-player.img.get_width() 
 
                 #right side
-                elif player.left > collider.col_rect.left and player.x <= collider.col_rect.right  :
+                elif player.left > collider.rect.left and player.x <= collider.rect.right  :
                     if player.x_accel < 0: 
                         player.x_accel = 0
                     if player.x_vel < 0: 
                         player.x_vel = 0
-                    player.x = collider.col_rect.right 
-    print(player.x , player.left)
+                    player.x = collider.rect.right 
+    
     gravity = 1
     def physics():
         
         player.y_vel += gravity
         print(player.y_vel,player.y_accel)
     collision(random_obj)
+    collision(floor)
     #physics()
 
 
@@ -142,7 +132,7 @@ while True:
     player.topleft = player.pos
 #drawing
     screen.blit(background,(0,0))
-    screen.blit(floor,(0,screen_height- floor.get_height()))
+    screen.blit(floor.img,(floor.rect))
     #screen.blit(box,box_rect.topleft)
     screen.blit(random_obj.img,random_obj.rect)
 

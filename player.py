@@ -14,7 +14,6 @@ class Player:
     def __init__(self,player_x,player_y,player_x_vel,player_y_vel,player_x_accel,player_y_accel,img,width,height):
         self.x = player_x
         self.y = player_y
-
         self.x_vel = player_x_vel
         self.y_vel = player_y_vel
         self.x_accel = player_x_accel
@@ -22,7 +21,6 @@ class Player:
         self.img = img
         self.width = width
         self.height = height
-
 
     @property
     def pos(self):

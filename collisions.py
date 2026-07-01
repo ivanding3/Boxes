@@ -1,10 +1,10 @@
 import pygame
 from player import *
 class collider:
-    def __init__(self,rect,img,col_rect):
+    def __init__(self,rect,img):
         self.rect = rect
         self.img = img
-        self.col_rect = col_rect
+
 
 def center(size,pos):
     width = size[0]
@@ -13,8 +13,8 @@ def center(size,pos):
     top = pos[1]
     return (width/2+left,height/2+top)
 
-random_obj : collider = collider(pygame.Rect((1000,500),(100,100)),pygame.transform.scale(pygame.image.load('Green.webp'),(100,100)),pygame.Rect((1000,500),(100,100)))
-
+random_obj = collider(pygame.Rect((1000,500),(100,100)),pygame.transform.scale(pygame.image.load('Green.webp'),(100,100)))
+floor = collider(pygame.Rect((0,700),(1600,200)),pygame.transform.scale(pygame.image.load('Green.webp'),(1600,200)))
 
 
 
