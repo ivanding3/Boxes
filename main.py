@@ -1,7 +1,7 @@
 import pygame
 from sys import exit
 from player import *
-from collisions import *
+from collider_objs import *
 
 screen_width = 1600
 screen_height = 900
@@ -135,6 +135,7 @@ while game_running:
     screen.blit(floor.img,(floor.rect))
     #screen.blit(box,box_rect.topleft)
     screen.blit(random_obj.img,random_obj.rect)
+
 
 
     screen.blit(player.img, (player.pos))    
