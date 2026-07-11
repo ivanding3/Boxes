@@ -18,6 +18,8 @@ class Camera(sprites.sprite):
         if (x_dist) ** 2 + (y_dist) ** 2 >= 1000: #if the player is outside a certain radius from the center
             self.x+= x_dist*abs(x_dist)/10000
             self.y+= y_dist*abs(y_dist)/10000
+        self.x -= player.velx/70
+        self.y -= player.vely/70
 
 
     @property
@@ -35,6 +37,9 @@ camera = Camera((0,0),map_size)
 
 
 random_obj = sprites.sprite((1000,500),(100,100),'Green.webp')
+
+
+
 
 
 floor = sprites.sprite((0,700),(16000,200),'Green.webp')

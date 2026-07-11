@@ -47,7 +47,7 @@ def collision(collider,margin = 5):
                 if sprites.player.vely > 0:
                     sprites.player.vely = 0
                 sprites.player.y = collider.top - sprites.player.height
-                print("top")
+                #print("top")
             #bottom side
             elif sprites.player.top > collider.top and sprites.player.top <= collider.bottom:
                 if sprites.player.accely < 0: 
@@ -55,7 +55,7 @@ def collision(collider,margin = 5):
                 if sprites.player.vely < 0:
                     sprites.player.vely = 0
                 sprites.player.y = collider.bottom 
-                print("bottom")
+                #print("bottom")
             
         # Checks if either the top or bottom side of the sprites.player is over the collider
         if (sprites.player.bottom >= collider.top + vars.margin and sprites.player.bottom <= collider.bottom or
@@ -67,7 +67,7 @@ def collision(collider,margin = 5):
                 if sprites.player.velx > 0:
                     sprites.player.velx = 0
                 sprites.player.x = collider.left-sprites.player.width
-                print("left")
+                #print("left")
             #right side
             elif sprites.player.left > collider.left and sprites.player.left <= collider.right:
                 if sprites.player.accelx < 0: 
@@ -75,6 +75,6 @@ def collision(collider,margin = 5):
                 if sprites.player.velx < 0: 
                     sprites.player.velx = 0
                 sprites.player.x = collider.right 
-                print(sprites.player.velx ,sprites.player.accelx )
+                #print(sprites.player.velx ,sprites.player.accelx )
 
 

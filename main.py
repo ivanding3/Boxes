@@ -36,7 +36,7 @@ while game_running:
     keys_pressed = pygame.key.get_pressed()
 
     vars.dt = clock.tick(240)/1000
-
+    print(f'fps = {1/vars.dt}')
     #print(player.vel,player.accel,dt)
     sprites.player.movement()
     collisions.collision(map.random_obj)
@@ -69,15 +69,16 @@ while game_running:
 
 #drawing
     map.camera.surface.blit(background,(0,0))
-    map.camera.surface.blit(map.floor.surface,(map.floor.rect))
+    map.camera.surface.blit(map.floor.surface,(map.floor.pos))
 
-    map.camera.surface.blit(map.random_obj.surface,map.random_obj.rect)
+    map.camera.surface.blit(map.random_obj.surface,map.random_obj.pos)
     
 
 
     map.camera.surface.blit(sprites.player.surface, (sprites.player.pos))
     vars.screen.blit(map.camera.surface,(0,0),map.camera.display_part)
     ui.test_button.run_button()
+
     #pygame.draw.circle(screen,(00,00,00),(-camera.x+800,-camera.y+450),70)
   
     pygame.display.flip()    
