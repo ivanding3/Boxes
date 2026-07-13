@@ -103,7 +103,15 @@ while game_running:
     map_stuff.camera.surface.blit(sprites.player.surface, (sprites.player.pos))
     if ui.map_mode_button.pressed:
         map_stuff.map_maker.map_mode()
+        for i in range(map_stuff.map_size[0]//16):
+            pygame.draw.line(map_stuff.camera.surface,(200,200,200),(i*16,0),(i*16,map_stuff.map_size[1]))
+        for i in range(map_stuff.map_size[1]//16):
+            pygame.draw.line(map_stuff.camera.surface,(200,200,200),(0,i*16),(map_stuff.map_size[0],i*16))
     vars.screen.blit(map_stuff.camera.surface,(0,0),map_stuff.camera.display_part)
+    
+
+
+
     ui.test_button.run_button()
     ui.debug_button.run_button()
     ui.map_mode_button.run_button()

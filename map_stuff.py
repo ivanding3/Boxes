@@ -4,7 +4,7 @@ import vars
 
 
 #map data idk
-#grid size 32 px
+#grid size 16 px
 
 map_size = (6400,1800)
 
