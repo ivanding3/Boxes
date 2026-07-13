@@ -1,4 +1,5 @@
 import pygame
+import json
 pygame.init()
 screen = pygame.display.set_mode((1600,900),vsync=1)
 
@@ -38,4 +39,4 @@ while True:
             exit()
 
     pygame.display.flip() 
-    
+    json.load

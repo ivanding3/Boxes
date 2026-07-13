@@ -16,7 +16,7 @@ def max(a,b,max=0):
     return n
 
 class button:
-    def __init__(self,pos,font_size,color,text,margin = 10):
+    def __init__(self,pos,font_size,color,text,margin = 10,toggleable = False):
         self.pos = pos
         self.font_size = font_size
         self.color = color
@@ -24,8 +24,11 @@ class button:
         self.margin = margin
         self.width = pygame.font.SysFont("geistpixelregular",self.font_size).size(self.text)[0]+self.margin*2
         self.height = pygame.font.SysFont("geistpixelregular",self.font_size).size(self.text)[1]+self.margin*2
+        self.toggleable = toggleable
+    def locked(self):
+        self.locked = False
 
-
+        
 
     def over_button(self):
         self.over_button = False
@@ -45,13 +48,20 @@ class button:
         self.pressed = False
     
     def pressed_detect(self):
-        if self.over_button == True:    
-            if pygame.mouse.get_pressed()[0] == True:
-                self.pressed = True
+        if not self.toggleable:
+            if self.over_button == True:    
+                if pygame.mouse.get_pressed()[0] == True:
+                    self.pressed = True
+                else:
+                    self.pressed = False
             else:
                 self.pressed = False
         else:
-            self.pressed = False
+            if self.over_button == True:    
+                if pygame.mouse.get_pressed()[0] and not self.locked:
+                    self.pressed = not self.pressed
+                    self.locked = True
+                    
 
             
 
@@ -70,7 +80,12 @@ class button:
             draw_text(self.text,self.font_size,(0,0,0),(self.pos[0]+self.margin,self.pos[1]+self.margin),dest)
         else:
             draw_text(self.text,self.font_size,(80,80,80),(self.pos[0]+self.margin,self.pos[1]+self.margin),dest)
+
     def run_button(self,dest = vars.screen):
+        if self.toggleable:
+            
+            if self.locked:
+                if not pygame.mouse.get_pressed()[0]: self.locked = False
         self.over_button_detect()
         self.pressed_detect()
         self.display(dest)
@@ -90,8 +105,8 @@ def menu():
     pass
 
 test_button = button((0,0),30,(0,255,0),"hello world")
-
-
+debug_button = button((1500,0),30,(255,0,0),"debug",toggleable=True)
+map_mode_button = button((800,0),30,(0,0,255),'Map_mode',toggleable=True)
 
 if __name__ == '__main__':
     test_button = button((0,0),30,(0,255,0),"hello world")

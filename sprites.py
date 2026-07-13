@@ -21,28 +21,28 @@ class sprite:
         self.rect = pygame.Rect(pos,size)
     @property
     def pos(self):
-        return (self.x, self.y)
+        return (self.x,self.y)
     @pos.setter
     def pos(self,tuple):
-        (self.x, self.y) = tuple
+        (self.x,self.y) = tuple
     @property
     def vel(self):
-        return (self.velx , self.vely)
+        return (self.velx,self.vely)
     @vel.setter
     def vel(self,vel):
-        (self.velx , self.vely) = vel
+        (self.velx,self.vely) = vel
     @property
     def accel(self):
-        return (self.accelx , self.accely)
+        return (self.accelx,self.accely)
     @accel.setter
     def accel(self,accel):
-        (self.accelx , self.accely) = accel
+        (self.accelx,self.accely) = accel
     @property
     def size(self):
-        return (self.width, self.height)
+        return (self.width,self.height)
     @size.setter
     def size(self, tuple):
-        (self.width, self.height) = tuple
+        (self.width,self.height) = tuple
     @property
     def left(self):
         return self.x
