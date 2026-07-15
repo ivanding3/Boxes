@@ -9,7 +9,10 @@ def center(size,pos):
     top = pos[1]
     return (width/2+left,height/2+top)
 
-
+def sign(num):
+    if num > 0 :return 1
+    if num < 0 :return-1
+    if num == 0:return 0
 
 class sprite:
     def __init__(self,pos,size,texture_name,vel = (0,0), accel = (0,0)):
@@ -19,6 +22,7 @@ class sprite:
         self.size = size
         self.surface = pygame.transform.scale(pygame.image.load(texture_name),size)
         self.rect = pygame.Rect(pos,size)
+
     @property
     def pos(self):
         return (self.x,self.y)
@@ -37,6 +41,18 @@ class sprite:
     @accel.setter
     def accel(self,accel):
         (self.accelx,self.accely) = accel
+    @property
+    def input_direction(self):
+        return (self.input_directionx,self.input_directiony)
+    @input_direction.setter
+    def input_direction(self,tuple):
+        (self.input_directionx,self.input_directiony) = tuple  
+    @property
+    def vel_direction(self):
+        return (self.vel_directionx,self.vel_directiony)
+    @vel_direction.setter
+    def vel_direction(self,tuple):
+        (self.vel_directionx,self.vel_directiony) = tuple  
     @property
     def size(self):
         return (self.width,self.height)
@@ -91,27 +107,42 @@ class sprite:
 class Player(sprite):
     def __init__(self, pos, size, texture_name, vel=(0, 0), accel=(0, 0)):
         super().__init__(pos, size, texture_name, vel, accel)
-    
+        self.colliding_left_wall = False
+        self.colliding_right_wall = False
+        self.colliding_ceiling = False
+        self.colliding_floor = False
+        self.collided_floor = False
     def movement(self):
         keys_pressed = pygame.key.get_pressed()
-        if keys_pressed[pygame.K_w] == True: #and if vel < a vel and if on ground 
-            self.vely = -500
-        elif keys_pressed[pygame.K_s] == True: # increase max accel down
+        if keys_pressed[pygame.K_w] and keys_pressed[pygame.K_s]:
+            self.input_direction
+        if keys_pressed[pygame.K_w] and not self.colliding_ceiling:
+            self.jump()
+
+        elif keys_pressed[pygame.K_s]and not self.colliding_floor: 
             self.accely = 500 
+            self.input_directiony = 1
+
         else:
             self.accely = 0
-        self.vely += self.accely* vars.dt 
-        self.y += self.vely*vars.dt 
+            self.input_directiony = 0
+
 
         #movement y
-        if keys_pressed[pygame.K_a] == True: #
+        if keys_pressed[pygame.K_a] and keys_pressed[pygame.K_d]:
+            self.accelx = 0
+        elif keys_pressed[pygame.K_a] and not self.colliding_right_wall:
             self.accelx = -500
-        elif keys_pressed[pygame.K_d] == True:
-            self.accelx = 500     
+            self.input_directionx = 1
+
+        elif keys_pressed[pygame.K_d] and not self.colliding_left_wall:
+            self.accelx = 500    
+            self.input_directionx = -1
+
         else:
             self.accelx = 0
-        self.velx += self.accelx*vars.dt
-        self.x += self.velx*vars.dt    
+            self.input_directionx = 0
+   
     
     def on_floor(self):
         pass
@@ -126,12 +157,33 @@ class Player(sprite):
     def gravity(self):
         self.vely += 1000*vars.dt     
 
+    def update_movement(self):
+        self.velx += self.accelx*vars.dt
+        self.vely += self.accely*vars.dt
+        self.x += self.velx*vars.dt
+        self.y += self.vely*vars.dt
+        self.vel_direction = tuple(map(sign,self.vel))
+    
+    def jump(self):
+        if self.collided_floor:
+            self.vely = -500
+            self.vel_directiony = -1
+            self.collided_floor = False
+        else: 
+            self.accely = -400
+
+           
+
+    def dash(self):
+        pass
+
+    def create_crumble(self):
+        pass
+
+
+
 
 player = Player((800,500),(100,100),'boxplayer.webp')
-
- 
-
-
 
     
 

@@ -32,8 +32,7 @@ def sort_closest(dists):
 
      
 
-
-
+'''
 def collision(collider,margin = 5):
         # Checks if either the left or right side of the player is over the collider 
         if (sprites.player.right >= collider.left + vars.margin and sprites.player.right <= collider.right or
@@ -76,5 +75,78 @@ def collision(collider,margin = 5):
                     sprites.player.velx = 0
                 sprites.player.x = collider.right 
                 #print(sprites.player.velx ,sprites.player.accelx )
+'''
+def collider_left(obj,static_obj):
+    if obj.right < static_obj.left + vars.margin:
+        if obj.bottom > static_obj.top and obj.top < static_obj.bottom:
+            #print('left')
+            if obj.right >= static_obj.left:
+                obj.right = static_obj.left
+                obj.colliding_left_wall = True
+                if obj.vel_directionx == 1:
+                    obj.velx = 0
+            else:obj.colliding_left_wall = False           
+    else:obj.colliding_left_wall = False                  
+def collider_right(obj,static_obj):
+    if obj.left > static_obj.right - vars.margin:
+        if obj.bottom > static_obj.top and obj.top < static_obj.bottom:
+            #print('right')
+            if obj.left <= static_obj.right:
+                obj.left = static_obj.right
+                obj.colliding_right_wall = True
+
+                if obj.vel_directionx == -1:
+                    obj.velx = 0
+            else:
+                obj.colliding_right_wall = False
+    obj.colliding_right_wall = False
+
+                
+def collider_top(obj,static_obj):
+    if obj.bottom < static_obj.top + vars.margin:
+        if obj.right > static_obj.left and obj.left < static_obj.right:
+            #print('top')
+            if obj.bottom >= static_obj.top:
+                obj.bottom = static_obj.top
+                obj.colliding_floor = True
+                obj.collided_floor = True
+                if obj.vel_directiony == 1:
+                    obj.vely = 0
+            else:obj.colliding_floor = False
+    else:obj.colliding_floor = False
+
+                
+def collider_bottom(obj,static_obj):
+    print('hi')
+    if obj.top > static_obj.bottom - vars.margin:
+        if obj.right > static_obj.left and obj.left < static_obj.right:
+            print('pls')
+            if obj.top <= static_obj.bottom:
+                obj.top = static_obj.bottom
+                obj.colliding_ceiling = True
+
+                if obj.vel_directiony == -1:
+                    obj.vely = 0    
+            else:
+                obj.colliding_ceiling = False 
+    else:
+        obj.colliding_ceiling = False 
+
+
+
+def collision(obj,static_obj):
+    print(obj.vel_direction,obj.vel)
+    if obj.vel_directionx != -1:
+        collider_left(obj,static_obj)
+    elif obj.vel_directionx !=1:
+        collider_right(obj,static_obj)
+    if obj.vel_directiony != -1:
+        collider_top(obj,static_obj)
+    elif obj.vel_directiony !=1:
+        collider_bottom(obj,static_obj)
+
+    print(obj.colliding_left_wall,obj.colliding_right_wall,obj.colliding_ceiling,obj.colliding_floor)
+
+
 
 

@@ -1,9 +1,8 @@
-(3248, 64)/(416, 448)/Green.webp/sprite_0/
-(1040, 224)/(16, 0)/Green.webp/sprite_0/
-(784, 336)/(0, 0)/Green.webp/sprite_1/
-(784, 368)/(0, 16)/Green.webp/sprite_2/
-(768, 400)/(0, 32)/Green.webp/sprite_3/
-(768, 448)/(0, 48)/Green.webp/sprite_4/
-(752, 528)/(0, 16)/Green.webp/sprite_5/
-(752, 544)/(0, 0)/Green.webp/sprite_6/
-(768, 464)/(336, 208)/Green.webp/sprite_0/
+(1376, 704)/(1120, 32)/Green.webp/sprite_0/(128, 928)/(1296, 352)/Green.webp/sprite_0/
+(32, 1376)/(1120, 224)/Green.webp/sprite_1/
+(672, 1216)/(144, 48)/Green.webp/sprite_0/
+(864, 1216)/(32, 16)/Green.webp/sprite_0/
+(1168, 768)/(384, 208)/Green.webp/sprite_0/
+(1120, 832)/(32, 16)/Green.webp/sprite_0/
+(1200, 1312)/(32, 16)/Green.webp/sprite_0/
+(1040, 960)/(16, 16)/Green.webp/sprite_0/

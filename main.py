@@ -7,9 +7,10 @@ import map_stuff
 import vars 
 #menu screen still not done
 #make a timer for everything so i can see what  is taking so long later
-#collision fixes-4 different directional surfaces
+#hitboxes for map mkaing
 #implement mechanics
 #create some gameplay
+#needs last input direction
 
 clock = pygame.time.Clock()
 
@@ -17,8 +18,7 @@ pygame.display.init()
 
 
 background = pygame.transform.scale(pygame.image.load('BG image.png'),(map_stuff.map_size))
-box = pygame.transform.scale(pygame.image.load('Green.webp'),(200,200))
-box_rect = pygame.Rect((1000,500),(200,200))
+
 
 file_len = 0
 
@@ -32,23 +32,22 @@ pygame.event.set_blocked(pygame.MOUSEMOTION)
 game_running = True
 while game_running:
 
-    margin = (sum(map(abs,sprites.player.vel))//100)
-    print(margin)
+    margin = (sum(map(abs,sprites.player.vel))//30)
+    #print(margin)
     if margin>5:
         vars.margin = margin
     
     keys_pressed = pygame.key.get_pressed()
 
     
-    print(f'fps = {1/vars.dt}')
+    #print(f'fps = {1/vars.dt}')
 
     #print(player.vel,player.accel,dt)
     sprites.player.movement()
-    
-    collisions.collision(map_stuff.random_obj)
-    collisions.collision(map_stuff.floor)
+    sprites.player.update_movement()
+
     map_stuff.camera.follow_player()
-    #sprites.player.air_res()
+    sprites.player.air_res()
     sprites.player.gravity()
     #camera
 
@@ -82,9 +81,9 @@ while game_running:
 
 #drawing
     map_stuff.camera.surface.blit(background,(0,0))
-    map_stuff.camera.surface.blit(map_stuff.floor.surface,(map_stuff.floor.pos))
 
-    map_stuff.camera.surface.blit(map_stuff.random_obj.surface,map_stuff.random_obj.pos)
+    #print(sprites.player.vel)
+
     # inefficient
     with open('map_objs.txt','r') as f:
         f = f.readlines()
@@ -104,9 +103,12 @@ while game_running:
                 
             
 
-    for obj in map_stuff.map_objects:
-        map_stuff.camera.surface.blit(obj.surface,obj.pos)
-        collisions.collision(obj)
+    for collider_obj in map_stuff.map_objects:
+        map_stuff.camera.surface.blit(collider_obj.surface,collider_obj.pos)
+        collisions.collision(sprites.player,collider_obj)
+
+
+
     map_stuff.camera.surface.blit(sprites.player.surface, (sprites.player.pos))
     if ui.map_mode_button.pressed:
         map_stuff.map_maker.map_mode()

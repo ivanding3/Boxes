@@ -58,14 +58,14 @@ class Map_maker():
 
     def display_ghost(self):
         size = [y-x for x,y in zip(self.init,[x-y for x,y in zip(pygame.mouse.get_pos(),camera.pos)])]
-        camera.surface.fill((00,00,00),pygame.Rect(self.init,size))
+        camera.surface.fill((00,00,00),pygame.Rect(self.init,snap_to_grid(size)))
     
     def finalizing(self,event):
         break_it = False
         self.final = snap_to_grid([x-y for x,y in zip(event.pos,camera.pos)])
         self.size = tuple([y-x for x,y in zip(self.init,self.final)])
         for length in self.size:
-            if length <0:
+            if length <1:
                 self.creating = False
                 break_it = True
         if break_it:
@@ -104,10 +104,4 @@ map_maker = Map_maker()
 
 
 
-random_obj = sprites.sprite((1000,500),(100,100),'Green.webp')
 
-
-
-
-
-floor = sprites.sprite((0,700),(16000,200),'Green.webp')
