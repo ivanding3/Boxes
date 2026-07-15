@@ -1,6 +1,6 @@
 import pygame
 import vars
-
+import collisions
 
 def center(size,pos):
     width = size[0]
@@ -105,21 +105,24 @@ class sprite:
 
 
 class Player(sprite):
-    def __init__(self, pos, size, texture_name, vel=(0, 0), accel=(0, 0)):
+    def __init__(self, pos, size, texture_name, vel=(0, 0), accel=(0, 0),vel_direction = (0,0)):
         super().__init__(pos, size, texture_name, vel, accel)
-        self.colliding_left_wall = False
-        self.colliding_right_wall = False
-        self.colliding_ceiling = False
-        self.colliding_floor = False
-        self.collided_floor = False
+        self.vel_direction = vel_direction
+        self.colliding_left = False
+        self.colliding_right = False
+        self.colliding_top = False
+        self.colliding_bottom = False
+        self.collided_bottom = False
+
     def movement(self):
         keys_pressed = pygame.key.get_pressed()
         if keys_pressed[pygame.K_w] and keys_pressed[pygame.K_s]:
-            self.input_direction
-        if keys_pressed[pygame.K_w] and not self.colliding_ceiling:
+            pass
+        if keys_pressed[pygame.K_w] and not self.colliding_top:
             self.jump()
+            self.input_directiony = -1
 
-        elif keys_pressed[pygame.K_s]and not self.colliding_floor: 
+        elif keys_pressed[pygame.K_s]and not self.colliding_bottom: 
             self.accely = 500 
             self.input_directiony = 1
 
@@ -131,21 +134,20 @@ class Player(sprite):
         #movement y
         if keys_pressed[pygame.K_a] and keys_pressed[pygame.K_d]:
             self.accelx = 0
-        elif keys_pressed[pygame.K_a] and not self.colliding_right_wall:
+        elif keys_pressed[pygame.K_a] and not self.colliding_right:
             self.accelx = -500
-            self.input_directionx = 1
-
-        elif keys_pressed[pygame.K_d] and not self.colliding_left_wall:
-            self.accelx = 500    
             self.input_directionx = -1
+
+        elif keys_pressed[pygame.K_d] and not self.colliding_left:
+            self.accelx = 500    
+            self.input_directionx = 1
 
         else:
             self.accelx = 0
             self.input_directionx = 0
    
     
-    def on_floor(self):
-        pass
+
     
     def on_wall(self): 
         pass
@@ -165,12 +167,12 @@ class Player(sprite):
         self.vel_direction = tuple(map(sign,self.vel))
     
     def jump(self):
-        if self.collided_floor:
+        if self.collided_bottom:
             self.vely = -500
             self.vel_directiony = -1
-            self.collided_floor = False
+            self.collided_bottom = False #currently nothings happening
         else: 
-            self.accely = -400
+            self.accely = -380
 
            
 

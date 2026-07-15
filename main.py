@@ -11,6 +11,7 @@ import vars
 #implement mechanics
 #create some gameplay
 #needs last input direction
+#last created shape is sticky from the left and right??
 
 clock = pygame.time.Clock()
 
@@ -26,12 +27,13 @@ file_len = 0
 
 pygame.event.set_blocked(pygame.MOUSEMOTION)
 
-
+frame = 0
 
 
 game_running = True
 while game_running:
-
+    frame +=1
+    #print(frame)
     margin = (sum(map(abs,sprites.player.vel))//30)
     #print(margin)
     if margin>5:
@@ -44,22 +46,16 @@ while game_running:
 
     #print(player.vel,player.accel,dt)
     sprites.player.movement()
-    sprites.player.update_movement()
+    
 
     map_stuff.camera.follow_player()
     sprites.player.air_res()
-    sprites.player.gravity()
+    #sprites.player.gravity()
     #camera
 
+    print(sprites.player.pos,sprites.player.vel)
 
 
-    #print(pygame.event.get())
-    
-
-   
-    #vars.margin = [(x+y)//2 for x,y in sprites.player.vel]//100
-
-    #print(random_obj.right,player.left)
     
     #inputs
     for event in pygame.event.get():
@@ -129,3 +125,4 @@ while game_running:
 
     pygame.display.update(pygame.Rect((0,0),vars.resolution))    
     vars.dt = clock.tick(75)/1000
+    sprites.player.update_movement()

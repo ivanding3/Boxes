@@ -29,7 +29,7 @@ while True:
     screen.fill((255,255,255))
     surface.blit(surface2,(1200,0))
     screen.blit(surface,(x,y))
-    print(x,y)
+
 
 
 
