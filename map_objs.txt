@@ -1,8 +1,1 @@
 (32, 1376)/(1120, 224)/Green.webp/sprite_1/
-(416, 1264)/(128, 144)/Green.webp/sprite_1/
-(704, 1008)/(464, 176)/Green.webp/sprite_2/
-(1008, 1152)/(144, 128)/Green.webp/sprite_3/
-(1776, 752)/(240, 80)/Green.webp/sprite_1/
-(1472, 896)/(112, 256)/Green.webp/sprite_0/
-(1408, 656)/(128, 160)/Green.webp/sprite_2/
-(1328, 896)/(64, 176)/Green.webp/sprite_1/

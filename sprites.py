@@ -1,7 +1,9 @@
 import pygame
 import vars
-import collisions
 
+
+dash_speed = 500
+root_2 = 2**(1/2)
 def center(size,pos):
     width = size[0]
     height = size[1]
@@ -41,12 +43,6 @@ class sprite:
     @accel.setter
     def accel(self,accel):
         (self.accelx,self.accely) = accel
-    @property
-    def input_direction(self):
-        return (self.input_directionx,self.input_directiony)
-    @input_direction.setter
-    def input_direction(self,tuple):
-        (self.input_directionx,self.input_directiony) = tuple  
     @property
     def vel_direction(self):
         return (self.vel_directionx,self.vel_directiony)
@@ -105,26 +101,38 @@ class sprite:
 
 
 class Player(sprite):
-    def __init__(self, pos, size, texture_name, vel=(0, 0), accel=(0, 0),vel_direction = (0,0)):
+    def __init__(self, pos, size, texture_name, vel=(0, 0), accel=(0, 0),input_direction = (0,0),vel_direction = (0,0)):
         super().__init__(pos, size, texture_name, vel, accel)
+        self.input_direction = input_direction
         self.vel_direction = vel_direction
         self.colliding_left = False
         self.colliding_right = False
         self.colliding_top = False
         self.colliding_bottom = False
         self.collided_bottom = False
+        self.dash_cooldown_time = 0
+    @property
+    def input_direction(self):
+        return (self.input_directionx,self.input_directiony)
+    @input_direction.setter
+    def input_direction(self,tuple):
+        (self.input_directionx,self.input_directiony) = tuple  
 
     def movement(self):
         keys_pressed = pygame.key.get_pressed()
-        if keys_pressed[pygame.K_w] and keys_pressed[pygame.K_s]:
+        if keys_pressed[pygame.K_UP] and keys_pressed[pygame.K_DOWN]:
             pass
-        if keys_pressed[pygame.K_w] and not self.colliding_top:
-            self.jump()
+        elif keys_pressed[pygame.K_UP]:
             self.input_directiony = -1
+            if not self.colliding_top:
+                self.jump()
+            
 
-        elif keys_pressed[pygame.K_s]and not self.colliding_bottom: 
-            self.accely = 500 
+        elif keys_pressed[pygame.K_DOWN]:
             self.input_directiony = 1
+            if not self.colliding_bottom:
+                self.accely = 500 
+            
 
         else:
             self.accely = 0
@@ -132,15 +140,17 @@ class Player(sprite):
 
 
         #movement y
-        if keys_pressed[pygame.K_a] and keys_pressed[pygame.K_d]:
+        if keys_pressed[pygame.K_LEFT] and keys_pressed[pygame.K_RIGHT]:
             self.accelx = 0
-        elif keys_pressed[pygame.K_a] and not self.colliding_right:
-            self.accelx = -500
+        elif keys_pressed[pygame.K_LEFT]:
             self.input_directionx = -1
+            if not self.colliding_right:
+                self.accelx = -500
 
-        elif keys_pressed[pygame.K_d] and not self.colliding_left:
-            self.accelx = 500    
+        elif keys_pressed[pygame.K_RIGHT] :   
             self.input_directionx = 1
+            if not self.colliding_left:
+                self.accelx = 500 
 
         else:
             self.accelx = 0
@@ -165,7 +175,8 @@ class Player(sprite):
         self.x += self.velx*vars.dt
         self.y += self.vely*vars.dt
         self.vel_direction = tuple(map(sign,self.vel))
-    
+        if self.dash_cooldown_time <2:
+            self.dash_cooldown_time += vars.dt
     def jump(self):
         if self.collided_bottom:
             self.vely = -500
@@ -177,7 +188,40 @@ class Player(sprite):
            
 
     def dash(self):
-        pass
+        print(self.dash_cooldown_time)
+        if self.dash_cooldown_time > 1:
+            if (self.input_directionx !=0 and 
+                self.input_directiony !=0):
+                if self.input_directionx != 0:
+                    if sign(self.velx) == self.input_directionx:
+                        self.velx += 500/root_2*self.input_directionx
+                    else:
+                        self.velx = 500/root_2*self.input_directionx
+                if self.input_directiony != 0:
+                    if sign(self.vely) == self.input_directiony:
+                        self.vely += 500/root_2*self.input_directiony
+                    else:
+                        self.vely = 500/root_2*self.input_directiony
+            else: 
+                if self.input_directionx != 0:
+                    if sign(self.velx) == self.input_directionx:
+                        self.velx += 500*self.input_directionx
+                    else:
+                        self.velx = 500*self.input_directionx
+                else:
+                    self.velx = 500*self.input_directionx
+                if self.input_directiony != 0:
+                    if sign(self.vely) == self.input_directiony:
+                        self.vely += 500*self.input_directiony
+                    else:
+                        self.vely = 500*self.input_directiony
+                else:
+                    self.vely = 500*self.input_directiony
+            self.dash_cooldown()
+
+    def dash_cooldown(self):
+        self.dash_cooldown_time = 0
+
 
     def create_crumble(self):
         pass

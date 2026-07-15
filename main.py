@@ -6,13 +6,12 @@ import collisions
 import map_stuff 
 import vars 
 #menu screen still not done
-#make a timer for everything so i can see what  is taking so long later
 #hitboxes for map mkaing
-#implement mechanics
+#implement mechanics ****
 #create some gameplay
 #needs last input direction
 #last created shape is sticky from the left and right??
-
+#coyote time
 clock = pygame.time.Clock()
 
 pygame.display.init()
@@ -35,12 +34,10 @@ while game_running:
     frame +=1
     #print(frame)
     margin = (sum(map(abs,sprites.player.vel))//30)
-    #print(margin)
     if margin>5:
         vars.margin = margin
     
     keys_pressed = pygame.key.get_pressed()
-
     
     #print(f'fps = {1/vars.dt}')
 
@@ -49,11 +46,12 @@ while game_running:
     
 
     map_stuff.camera.follow_player()
-    sprites.player.air_res()
-    #sprites.player.gravity()
-    #camera
 
-    print(sprites.player.pos,sprites.player.vel)
+    #camera
+    sprites.player.update_movement()
+    sprites.player.air_res()
+    sprites.player.gravity()
+    
 
 
     
@@ -71,6 +69,10 @@ while game_running:
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             if ui.map_mode_button.pressed:
                 map_stuff.map_maker.finalizing(event)
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_x:
+                sprites.player.dash()
+         
 
     
 
@@ -92,16 +94,13 @@ while game_running:
                 size = tuple(map(int,data[1].replace('(','').replace(')','').split(',')))
                 img = data[2]
                 file_len += 1
-                
                 map_stuff.map_objects.append(sprites.sprite(pos,size,img))                                               
-            
-                                                          
+                                                               
                 
             
 
-    for collider_obj in map_stuff.map_objects:
-        map_stuff.camera.surface.blit(collider_obj.surface,collider_obj.pos)
-        collisions.collision(sprites.player,collider_obj)
+
+
 
 
 
@@ -113,6 +112,12 @@ while game_running:
             pygame.draw.line(map_stuff.camera.surface,(200,200,200),(i*16,0),(i*16,map_stuff.map_size[1]))
         for i in range(map_stuff.map_size[1]//16):
             pygame.draw.line(map_stuff.camera.surface,(200,200,200),(0,i*16),(map_stuff.map_size[0],i*16))
+
+    for collider_obj in map_stuff.map_objects:
+        map_stuff.camera.surface.blit(collider_obj.surface,collider_obj.pos)
+        collisions.collision(sprites.player,collider_obj)
+
+            
     vars.screen.blit(map_stuff.camera.surface,(0,0),map_stuff.camera.display_part)
     
 
@@ -121,8 +126,8 @@ while game_running:
     ui.test_button.run_button()
     ui.debug_button.run_button()
     ui.map_mode_button.run_button()
-    #pygame.draw.circle(screen,(00,00,00),(-camera.x+800,-camera.y+450),70)
+
 
     pygame.display.update(pygame.Rect((0,0),vars.resolution))    
     vars.dt = clock.tick(75)/1000
-    sprites.player.update_movement()
+    #print(sprites.player.accel,sprites.player.vel,sprites.player.vel_direction)

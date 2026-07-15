@@ -85,9 +85,8 @@ def collider_top(obj,static_obj):
         obj.left < static_obj.right and
         obj.bottom >= static_obj.top):
             obj.bottom = static_obj.top
-            if obj.vel_directiony == 1:
-                obj.vely = 0
-                obj.accely = 0
+            obj.vely = 0
+            obj.accely = 0
 
 def collided_bottom(obj,static_obj):
     if (obj.top == static_obj.bottom and 
@@ -105,45 +104,40 @@ def collider_bottom(obj,static_obj):
         obj.left < static_obj.right and
         obj.top <= static_obj.bottom):
             obj.top = static_obj.bottom
-            if obj.vel_directiony == -1:
-                obj.vely = 0    
-                obj.accely = 0
+            obj.vely = 0    
+            obj.accely = 0
 
 
 
 
 
 def collision(obj,static_obj):
+    #left side of  static obj
     if collided_left(obj,static_obj):
         obj.right = static_obj.left
+        #right side of obj
         obj.colliding_right = True
-        if obj.input_directionx == 1:
-            obj.velx = 0
-            obj.accelx = 0
+        obj.velx = 0
+        obj.accelx = 0
     else:
         collider_left(obj,static_obj)
         obj.colliding_right = False
-
+    
     if collided_right(obj,static_obj):
         obj.left = static_obj.right
         obj.colliding_left = True
-        print('happening')
-        if obj.input_directionx == -1:
-            obj.velx = 0
-            obj.accelx = 0
-            print('happening2')
-            
+        obj.velx = 0
+        obj.accelx = 0      
     else:
         collider_right(obj,static_obj)
         obj.colliding_left = False
 
     if collided_top(obj,static_obj):
         obj.bottom = static_obj.top
-        #obj.touched_bottom = True
+        obj.collided_bottom = True
         obj.colliding_bottom = True
-        if obj.input_directiony == 1:
-            obj.vely = 0
-            obj.accely = 0
+        obj.vely = 0
+        obj.accely = 0
     else:
         collider_top(obj,static_obj)
         obj.colliding_bottom = False
@@ -152,13 +146,12 @@ def collision(obj,static_obj):
     if collided_bottom(obj,static_obj):
         obj.top = static_obj.bottom
         obj.colliding_top = True
-        if obj.input_directiony == -1:
-            obj.vely = 0   
-            obj.accely = 0
+        obj.vely = 0   
+        obj.accely = 0
     else:
         collider_bottom(obj,static_obj)
         obj.colliding_top = False
-    
+    #print(obj.colliding_left,obj.colliding_right,obj.colliding_top,obj.colliding_bottom)    
 
 
 
