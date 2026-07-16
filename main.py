@@ -84,7 +84,7 @@ while game_running:
         if keys_pressed[pygame.K_LEFT]:
             sprites.player.input_directionx = -1
             sprites.player.move_left()                
-        if keys_pressed[pygame.K_RIGHT]:
+        elif keys_pressed[pygame.K_RIGHT]:
             sprites.player.input_directionx = 1
             sprites.player.move_right()
         else:
@@ -95,7 +95,7 @@ while game_running:
     else:
         if keys_pressed[pygame.K_UP]:
             sprites.player.input_directiony = -1
-        if keys_pressed[pygame.K_DOWN]:
+        elif keys_pressed[pygame.K_DOWN]:
             sprites.player.input_directiony = 1
             sprites.player.fast_fall()
         else:
@@ -158,10 +158,11 @@ while game_running:
 
     sprites.player.update_movement()
     sprites.player.air_res()
-    #sprites.player.gravity()
+    sprites.player.gravity()
 
-    print(sprites.player.colliding_left,sprites.player.colliding_right,sprites.player.colliding_top,sprites.player.colliding_bottom,sprites.player.vel_direction)
-    print(sprites.player.pos,sprites.player.vel,sprites.player.accel)
+    #print(sprites.player.colliding_left,sprites.player.colliding_right,sprites.player.colliding_top,sprites.player.colliding_bottom,sprites.player.vel_direction)
+    #print(sprites.player.pos,sprites.player.vel,sprites.player.accel)
+
     ui.test_button.run_button()
     ui.debug_button.run_button()
     ui.map_mode_button.run_button()

@@ -196,23 +196,23 @@ class Player(sprite):
         self.vel = [vel-vel*vars.dt*0.5 for vel in self.vel]
 
     def gravity(self):
-        self.vely += 1000*vars.dt     
+        if not self.colliding_bottom:
+            self.vely += 1000*vars.dt     
 
     def update_movement(self):
         self.velx += self.accelx*vars.dt
         self.vely += self.accely*vars.dt
         self.accel = (0,0)
+        self.vel_direction = tuple(map(sign,self.vel))
         if (self.colliding_left and self.vel_directionx == -1 or
             self.colliding_right and self.vel_directionx == 1):
             self.velx = 0
         if (self.colliding_top and self.vel_directiony == -1 or
             self.colliding_bottom and self.vel_directiony == 1):
-            
             self.vely = 0
-        print(self.vel)
         self.x += self.velx*vars.dt
         self.y += self.vely*vars.dt
-        self.vel_direction = tuple(map(sign,self.vel))
+        
         if self.dash_cooldown_time <2:
             self.dash_cooldown_time += vars.dt
     def jump(self):

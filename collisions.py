@@ -181,6 +181,7 @@ def collision_left(obj,static_obj):
         obj.left >= static_obj.right and
         obj.left + obj.velx*vars.dt <= static_obj.right):
             obj.collided_left = True
+            static_obj.collided_right = True
             obj.left = static_obj.right
             obj.left_colliding.append(static_obj)
 
@@ -191,6 +192,7 @@ def collision_right(obj,static_obj):
         obj.right <= static_obj.left and
         obj.right + obj.velx*vars.dt >= static_obj.left):
             obj.collided_right = True
+            static_obj.collided_left = True
             obj.right = static_obj.left
             obj.right_colliding.append(static_obj)
 
@@ -201,6 +203,7 @@ def collision_top(obj,static_obj):
         obj.top >= static_obj.bottom and
         obj.top + obj.vely*vars.dt <= static_obj.bottom):
             obj.collided_top = True
+            static_obj.collided_bottom = True
             obj.top = static_obj.bottom
             obj.top_colliding.append(static_obj)
 def collision_bottom(obj,static_obj):
@@ -211,6 +214,7 @@ def collision_bottom(obj,static_obj):
         obj.bottom <= static_obj.top and
         obj.bottom + obj.vely*vars.dt >= static_obj.top):
             obj.collided_bottom = True
+            static_obj.collided_top = True
             obj.bottom = static_obj.top
             obj.bottom_colliding.append(static_obj)
 
