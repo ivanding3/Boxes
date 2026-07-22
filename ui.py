@@ -39,24 +39,23 @@ class button:
         self.over_button = False
     
     def over_button_detect(self):
-
         if (
         pygame.mouse.get_pos()[0] >= self.pos[0] and pygame.mouse.get_pos()[1] >= self.pos[1] and 
-        pygame.mouse.get_pos()[0] <= self.pos[0]+self.width and pygame.mouse.get_pos()[1] <= self.height
+        pygame.mouse.get_pos()[0] <= self.pos[0]+self.width and pygame.mouse.get_pos()[1] <= self.pos[1] +self.height
         ):
             self.over_button = True
 
         else:
+
             self.over_button = False
 
-    def pressed(self):
-        self.pressed = False
     
     def pressed_detect(self):
         if not self.toggleable:
             if self.over_button == True:    
                 if pygame.mouse.get_pressed()[0] == True:
                     self.pressed = True
+                    
                 else:
                     self.pressed = False
             else:
@@ -73,7 +72,7 @@ class button:
                     
 
     def display(self,dest):
-
+    
         button_surface = pygame.transform.scale(pygame.Surface(self.pos),(self.width,self.height))
         if self.pressed == False:
             button_surface.fill(self.color)
@@ -87,6 +86,7 @@ class button:
             draw_text(self.text,self.font_size,(80,80,80),(self.pos[0]+self.margin,self.pos[1]+self.margin),dest)
 
     def run_button(self,dest = vars.screen):
+        
         if self.toggleable:
             if self.locked:
                 if not pygame.mouse.get_pressed()[0]: self.locked = False
@@ -101,12 +101,19 @@ class button:
 #controls_button 
 
     
-  
-        
+resume_b = button((0,0),30,(55,55,55),'resume',always_vis=False)
+resume_b.pos = (vars.screen_width/2-resume_b.size[0]/2,300)
+settings_b = button((0,0),30,(55,55,55),'settings',always_vis=False)
+settings_b.pos = (vars.screen_width/2-settings_b.size[0]/2,400)
+controls_b = button((0,0),30,(55,55,55),'controls',always_vis=False)
+controls_b.pos = (vars.screen_width/2-controls_b.size[0]/2,500)
+quit_b = button((0,0),30,(55,55,55),'quit',always_vis=False)
+quit_b.pos = (vars.screen_width/2-quit_b.size[0]/2,600)
        
     
-def menu():
-    pass
+
+
+
 
 
 debug_button = button((1500,0),30,(255,0,0),"debug",toggleable=True)

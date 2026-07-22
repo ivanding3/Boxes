@@ -2,8 +2,8 @@ import pygame
 import vars
 from pathlib import Path
 
-dash_speed = 500
-dash_cd = 0.2
+dash_speed = 600
+dash_cd = 0.4
 move_speed = 500
 root_2 = 2**(1/2)
 
@@ -138,11 +138,12 @@ class Player(sprite):
         self.colliding_bottom = False
         self.overlapping = False
         self.respawn_point = pos
-        self.utils = 3
+        self.utils = 1
         self.in_dash = False
         self.dashx = 0
         self.dashy = 0
         self.facing = 1
+        self.paused = False
     @property
     def respawn_point(self):
         return (self.respawn_x,self.respawn_y)
@@ -176,6 +177,9 @@ class Player(sprite):
     def fast_fall(self):
         self.accely +=move_speed
 
+    
+
+
     def friction(self):
         if self.colliding_bottom:
             if self.input_directionx != self.vel_directionx:
@@ -201,8 +205,20 @@ class Player(sprite):
             self.colliding_top or 
             self.colliding_bottom):
             return True
-         
+
+    def check_pause(self):
+        
+        if vars.load_time > 0: 
+            self.paused = True
+        else:
+            self.paused = False
+        if vars.load_time > -10:
+            vars.load_time -= vars.dt
+
+        
+
     def update_movement(self):
+
         self.friction()
         self.velx += self.accelx*vars.dt
         self.velx -= 1*self.velx*vars.dt#friction
@@ -215,6 +231,9 @@ class Player(sprite):
         if self.in_dash:
             self.accel = (0,0)
             self.vel = self.dashx,self.dashy
+            player.surface = pygame.transform.scale(pygame.image.load(Path.cwd()/'assets'/'red.png'),(64,64))
+        else:
+            player.surface = pygame.transform.scale(pygame.image.load(Path.cwd()/'assets'/'boxplayer.png'),(64,64))
         if (self.colliding_left and self.vel_directionx == -1 or
             self.colliding_right and self.vel_directionx == 1):
             self.velx = 0
@@ -235,6 +254,9 @@ class Player(sprite):
             self.in_dash = False    
         if self.gravity_enabled:
             self.gravity()
+
+
+            
 
 
            
@@ -300,7 +322,7 @@ class Player(sprite):
             self.utils -= 1
 
     def reset_util(self):
-        self.utils = 3
+        self.utils = 1
 
     def death_animation(self):
         ...
@@ -335,8 +357,8 @@ class crumble_block(sprite):
         self.crumble_cooldown_time += vars.dt
 
 
-crumble = crumble_block((-1000, 1040),(160, 160),'boxplayer.webp')
-player = Player((800,500),(64,64),'boxplayer.webp')
+crumble = crumble_block((-1000, 1040),(160, 160),'box.png')
+player = Player((800,500),(64,64),'boxplayer.png')
 
 
 

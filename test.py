@@ -1,10 +1,20 @@
-def str_to_tuple(str):
-    nums = []
-    for char in str:
-        if char.isnumeric():
-            nums.append(int(char))
-    return tuple(nums)
+import pygame
 
-print(str_to_tuple(str((0,0))))
+# pygame setup
+pygame.init()
+screen = pygame.display.set_mode((1280, 720))
+clock = pygame.time.Clock()
+running = True
 
-print(str((0,0)))
+while running:
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+
+    pygame.display.flip()
+
+    clock.tick(60)  # limits FPS to 60
+
+pygame.quit()

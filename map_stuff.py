@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 #map data idk
 #grid size 16 px
-
-map_size = (1920,1080)
+#needs to be divisible by 16
+map_size = (1920,1088)
 
 map_objects = []
 
@@ -96,7 +96,6 @@ class Camera(sprites.sprite):
         self.room_key = str(self.curr_room.pos)
         self.curr_room.update_room_objs()
         self.background = pygame.transform.scale(self.background,room.size)
-        print(self.background.get_size())
     
     def stay_in_room(self):
         if self.x > 0:
@@ -131,13 +130,13 @@ class loading_zone(sprites.sprite):
         super().__init__(pos, size, texture_name)
         self.room = room
         self.surface = pygame.Surface(size)
-        self.surface.fill((12,34,55))
+        self.surface.fill((12,34,56))
         self.surface.set_colorkey((12,34,56))
         self.linked_loader = None
         self.loader_linked = False
         #1,2,3,4 correspond to left,top,right,bottom
+
     def init_loaders(self):
-        
         if self.left == 0:
             self.room_side = 1
             linked_room_pos = (self.room.x-1,self.room.y)
@@ -157,7 +156,6 @@ class loading_zone(sprites.sprite):
                                                 })
             self.linked_room = map_objs[str(linked_room_pos)]['room']
         elif self.top == 0:
-            
             self.room_side = 2
             linked_room_pos = (self.room.x,self.room.y+1)
             map_objs.setdefault(str(linked_room_pos) , {'room' : Room((map_size),linked_room_pos),
@@ -180,7 +178,6 @@ class loading_zone(sprites.sprite):
     def link_loaders(self):
         for loader in map_objs[self.linked_room.room_key]['loaders']:
             loader.init_loaders()
-            print(loader.pos)
             if (loader.room_side == self.room_side+2 or 
                 loader.room_side == self.room_side-2 ):
                 self.linked_loader = loader
@@ -266,7 +263,7 @@ class Map_maker():
                                     'spikes': [],
                                     'loaders': [],
                                     })
-            for key in keys[::-1]:
+            for key in keys:
                 map_objs[key]['room'] = Room(a_dict[key]['room']['size'],str_to_tuple(key))
 
                 objs = []
@@ -323,9 +320,11 @@ class Map_maker():
         if self.obj_type == 'obj':
             map_objs[main_camera.room_key]['objs'].append(sprites.sprite(self.init,snap_to_grid(self.size),texture_name='Green.webp'))
         if self.obj_type == 'spike':
-            map_objs[main_camera.room_key]['spikes'].append(Spike(self.init,snap_to_grid(self.size),texture_name='boxplayer.webp'))
+            map_objs[main_camera.room_key]['spikes'].append(Spike(self.init,snap_to_grid(self.size),texture_name='crowbox.png'))
         if self.obj_type == 'loader':
-            map_objs[main_camera.room_key]['loaders'].append(loading_zone((self.init),snap_to_grid(self.size),main_camera.curr_room))
+            loader = loading_zone((self.init),snap_to_grid(self.size),main_camera.curr_room)
+            map_objs[main_camera.room_key]['loaders'].append(loader)
+            loader.init_loaders()
         self.curr_room.update_room_objs()
         self.save_map()
 
@@ -380,7 +379,7 @@ def map_objs_to_json():
 
         spikes = []
         for spike in map_objs[key]['spikes']:
-            spikes.append({'pos':spike.pos,'size':spike.size,'texture_name':'boxplayer.webp'})
+            spikes.append({'pos':spike.pos,'size':spike.size,'texture_name':'boxplayer.png'})
         dict_copy[key].setdefault('spikes',spikes)
 
         loaders = []
