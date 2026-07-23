@@ -332,6 +332,7 @@ class Player(sprite):
         self.vel = (0,0)
         self.pos = self.respawn_point
         self.in_dash = False
+        crumble.pos = (-10000,10000)
 class crumble_block(sprite):
     def __init__(self, pos, size, texture_name):
         super().__init__(pos, size, texture_name)

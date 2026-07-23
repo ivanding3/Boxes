@@ -5,8 +5,7 @@ import ui
 import collisions 
 import map_stuff 
 import vars 
-from time import sleep
-
+from pathlib import Path
 
 vars.load_time = 1
 
@@ -33,6 +32,8 @@ map_stuff.main_camera.curr_room.update_room_objs()
 
 
 while vars.game_running:
+
+
     if not map_stuff.main_camera.curr_room.pos ==  (2, 0):
         time += vars.dt
 
@@ -58,7 +59,10 @@ while vars.game_running:
             vars.game_running = False
         pygame.display.flip()
     else:
-
+        if sprites.player.utils > 0:
+            sprites.player.surface = pygame.transform.scale(pygame.image.load(Path.cwd()/'assets'/'boxwithbox.png'),(64,64))
+        else:
+            sprites.player.surface = pygame.transform.scale(pygame.image.load(Path.cwd()/'assets'/'boxplayer.png'),(64,64))
 
         map_stuff.main_camera.follow_player()
         map_stuff.main_camera.stay_in_room()
@@ -144,11 +148,7 @@ while vars.game_running:
 
 
         #crumble
-        if sprites.crumble.collided_top:
-            sprites.crumble.crumble()
-        if not sprites.crumble.crumbled:
-            collisions.collision(sprites.player,sprites.crumble)
-            map_stuff.main_camera.surface.blit(sprites.crumble.surface,sprites.crumble.pos)
+
 
     
 
@@ -169,7 +169,21 @@ while vars.game_running:
             map_stuff.main_camera.surface.blit(loader.surface,loader.pos)
             loader.check_overlap()
 
+        if sprites.crumble.collided_top:
+            sprites.crumble.crumble()
+        if not sprites.crumble.crumbled:
+            collisions.collision(sprites.player,sprites.crumble)
+            map_stuff.main_camera.surface.blit(sprites.crumble.surface,sprites.crumble.pos)
         collisions.check_colliding(sprites.player)
+
+        if map_stuff.main_camera.curr_room.pos ==  (0, 0):
+            text_surface = pygame.font.SysFont("geistpixelregular",30).render('Arrow keys to move, c to jump', True, (0,0,0))
+            map_stuff.main_camera.surface.blit(text_surface,(200,400))
+        if map_stuff.main_camera.curr_room.pos ==  (1, 0):
+            text_surface = pygame.font.SysFont("geistpixelregular",30).render('Z to place box in the direction of arrow key input (diagonals exist)', True, (0,0,0))
+            map_stuff.main_camera.surface.blit(text_surface,(800,150))
+
+
         vars.screen.blit(map_stuff.main_camera.surface,(0,0),map_stuff.main_camera.display_part)
 
 
@@ -179,15 +193,16 @@ while vars.game_running:
             
             sprites.player.update_movement()
 
+
         
             
 
         ui.draw_text(f'time = {round(time,3)}',30,(99,99,99),(0,0),vars.screen)
 
-        #for button in ui.buttons:
-        #   button.run_button()
-        #if ui.map_mode_button.pressed:
-        #    ui.run_map_subbuttons()
+        for button in ui.buttons:
+           button.run_button()
+        if ui.map_mode_button.pressed:
+            ui.run_map_subbuttons()
 
         if not sprites.player.paused:
             pygame.display.update(pygame.Rect((0,0),vars.resolution))    

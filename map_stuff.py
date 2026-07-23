@@ -60,9 +60,12 @@ map_objs = {
 
 def str_to_tuple(str):
     nums = []
-    for char in str:
-        if char.isnumeric():
-            nums.append(int(char))
+    for i in range(len(str)):
+        if str[i].isnumeric():
+            if str[i-1] == '-':
+                nums.append(-int(str[i]))
+            else:
+                nums.append(int(str[i]))
     return tuple(nums)
 
 def snap_to_grid(pos,size = 16):
@@ -96,6 +99,7 @@ class Camera(sprites.sprite):
         self.room_key = str(self.curr_room.pos)
         self.curr_room.update_room_objs()
         self.background = pygame.transform.scale(self.background,room.size)
+        print(room.room_key)
     
     def stay_in_room(self):
         if self.x > 0:
@@ -130,7 +134,7 @@ class loading_zone(sprites.sprite):
         super().__init__(pos, size, texture_name)
         self.room = room
         self.surface = pygame.Surface(size)
-        self.surface.fill((12,34,56))
+        self.surface.fill((12,34,55))
         self.surface.set_colorkey((12,34,56))
         self.linked_loader = None
         self.loader_linked = False
@@ -278,7 +282,9 @@ class Map_maker():
 
                 loaders = []
                 for loader in a_dict[key]['loaders']:
+
                     loaders.append(loading_zone(loader['pos'],loader['size'],Room(loader['room_size'],loader['room_pos']),texture_name=loader['texture_name']))
+                    loading_zone(loader['pos'],loader['size'],Room(loader['room_size'],loader['room_pos']),texture_name=loader['texture_name']).init_loaders()
                 map_objs[key]['loaders'] = loaders
             
     def find_curr_room(self):
@@ -379,7 +385,7 @@ def map_objs_to_json():
 
         spikes = []
         for spike in map_objs[key]['spikes']:
-            spikes.append({'pos':spike.pos,'size':spike.size,'texture_name':'boxplayer.png'})
+            spikes.append({'pos':spike.pos,'size':spike.size,'texture_name':'crowbox.png'})
         dict_copy[key].setdefault('spikes',spikes)
 
         loaders = []
