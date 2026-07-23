@@ -148,11 +148,6 @@ while vars.game_running:
 
 
         #crumble
-
-
-    
-
-
         for obj in map_stuff.main_camera.curr_room.objs:
             collisions.collision(sprites.player,obj)
             if collisions.overlapping(sprites.player,obj):
@@ -199,8 +194,8 @@ while vars.game_running:
         
             
 
-        ui.draw_text(f'time = {round(time,3)}',30,(99,99,99),(0,0),vars.screen)
-        ui.draw_text(f'deaths = {sprites.player.death_count}',30,(99,99,99),(vars.screen_width-200,0),vars.screen)
+        ui.draw_text(f'time = {round(time,3)}',30,(0,0,0),(0,0),vars.screen)
+        ui.draw_text(f'deaths = {sprites.player.death_count}',30,(0,0,0),(vars.screen_width-200,0),vars.screen)
 
         #for button in ui.buttons:
         #   button.run_button()

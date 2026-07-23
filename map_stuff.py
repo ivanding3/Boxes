@@ -12,7 +12,7 @@ map_size = (1920,1088)
 
 map_objects = []
 
-background = pygame.transform.scale(pygame.image.load(Path.cwd()/'assets'/'BG image.png'),(3200,3200))
+background = pygame.transform.scale(pygame.image.load(Path.cwd()/'assets'/'background.png'),(3200,3200))
 background = pygame.Surface.convert(background)
 
 
@@ -99,6 +99,7 @@ class Camera(sprites.sprite):
         self.room_key = str(self.curr_room.pos)
         self.curr_room.update_room_objs()
         self.background = pygame.transform.scale(self.background,room.size)
+        sprites.crumble.pos = (-10000,10000)
     
     def stay_in_room(self):
         if self.x > 0:
@@ -323,7 +324,7 @@ class Map_maker():
 
 
         if self.obj_type == 'obj':
-            map_objs[main_camera.room_key]['objs'].append(sprites.sprite(self.init,snap_to_grid(self.size),texture_name='Green.webp'))
+            map_objs[main_camera.room_key]['objs'].append(sprites.sprite(self.init,snap_to_grid(self.size),texture_name='greentile.png'))
         if self.obj_type == 'spike':
             map_objs[main_camera.room_key]['spikes'].append(Spike(self.init,snap_to_grid(self.size),texture_name='crowbox.png'))
         if self.obj_type == 'loader':
@@ -379,7 +380,7 @@ def map_objs_to_json():
 
         objs = []
         for obj in map_objs[key]['objs']:
-            objs.append({'pos':obj.pos,'size':obj.size,'texture_name':'Green.webp'})
+            objs.append({'pos':obj.pos,'size':obj.size,'texture_name':'greentile.png'})
         dict_copy[key].setdefault('objs',objs)
 
         spikes = []
@@ -390,6 +391,6 @@ def map_objs_to_json():
         loaders = []
         for loader in map_objs[key]['loaders']:
             loaders.append({'pos':loader.pos,'size':loader.size,'room_size':loader.room.size,
-                            'room_pos':loader.room.pos,'texture_name':'Green.webp'})
+                            'room_pos':loader.room.pos,'texture_name':'greentile.png'})
         dict_copy[key].setdefault('loaders',loaders)
     return(dict_copy)

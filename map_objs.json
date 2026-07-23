@@ -20,7 +20,7 @@
           528,
           80
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -31,7 +31,7 @@
           544,
           80
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -42,7 +42,7 @@
           1248,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -53,7 +53,7 @@
           192,
           672
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -64,7 +64,7 @@
           144,
           80
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -75,7 +75,7 @@
           160,
           256
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -86,7 +86,7 @@
           144,
           96
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -97,7 +97,7 @@
           160,
           80
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -108,7 +108,7 @@
           160,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -119,7 +119,7 @@
           3200,
           816
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -130,7 +130,7 @@
           1376,
           784
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [
@@ -175,7 +175,7 @@
           0,
           0
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ]
   },
@@ -200,7 +200,7 @@
           352,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -211,7 +211,7 @@
           240,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -222,7 +222,7 @@
           64,
           496
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -233,7 +233,7 @@
           176,
           368
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -244,7 +244,7 @@
           64,
           144
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -255,7 +255,7 @@
           416,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -266,7 +266,7 @@
           1024,
           80
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -277,7 +277,7 @@
           1824,
           320
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -288,7 +288,7 @@
           1120,
           128
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -299,7 +299,7 @@
           736,
           240
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -310,7 +310,7 @@
           768,
           128
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -321,7 +321,7 @@
           64,
           416
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -332,7 +332,7 @@
           64,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -343,7 +343,7 @@
           4016,
           672
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -354,7 +354,7 @@
           176,
           128
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -365,7 +365,7 @@
           176,
           128
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -376,7 +376,7 @@
           224,
           128
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -387,7 +387,7 @@
           832,
           144
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -398,7 +398,7 @@
           80,
           1344
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -409,7 +409,7 @@
           1024,
           320
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [
@@ -586,7 +586,7 @@
           2,
           1
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -605,7 +605,7 @@
           2,
           1
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ]
   },
@@ -630,7 +630,7 @@
           240,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -641,7 +641,7 @@
           48,
           384
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -652,7 +652,7 @@
           272,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -663,7 +663,7 @@
           144,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -674,7 +674,7 @@
           208,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -685,7 +685,7 @@
           208,
           240
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -696,7 +696,7 @@
           720,
           160
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -707,7 +707,7 @@
           496,
           80
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -718,7 +718,7 @@
           912,
           528
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -729,7 +729,7 @@
           128,
           160
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -740,7 +740,7 @@
           48,
           368
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -751,7 +751,7 @@
           1920,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -762,7 +762,7 @@
           64,
           352
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [
@@ -840,7 +840,7 @@
           3,
           1
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -859,7 +859,7 @@
           3,
           1
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ]
   },
@@ -884,7 +884,7 @@
           96,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -895,7 +895,7 @@
           368,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -906,7 +906,7 @@
           80,
           256
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -917,7 +917,7 @@
           32,
           864
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -928,7 +928,7 @@
           32,
           176
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -939,7 +939,7 @@
           176,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -950,7 +950,7 @@
           80,
           720
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -961,7 +961,7 @@
           32,
           16
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -972,7 +972,7 @@
           80,
           480
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -983,7 +983,7 @@
           96,
           464
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -994,7 +994,7 @@
           272,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1005,7 +1005,7 @@
           368,
           288
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1016,7 +1016,7 @@
           544,
           192
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1027,7 +1027,7 @@
           832,
           80
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1038,7 +1038,7 @@
           64,
           1008
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [
@@ -1116,7 +1116,7 @@
           3,
           0
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1135,7 +1135,7 @@
           3,
           0
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ]
   },
@@ -1160,7 +1160,7 @@
           32,
           1088
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1171,7 +1171,7 @@
           1920,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1182,7 +1182,7 @@
           112,
           1056
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1193,7 +1193,7 @@
           1776,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [],
@@ -1220,7 +1220,7 @@
           208,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1231,7 +1231,7 @@
           176,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1242,7 +1242,7 @@
           128,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1253,7 +1253,7 @@
           144,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1264,7 +1264,7 @@
           112,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1275,7 +1275,7 @@
           112,
           224
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1286,7 +1286,7 @@
           112,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1297,7 +1297,7 @@
           144,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1308,7 +1308,7 @@
           176,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1319,7 +1319,7 @@
           144,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1330,7 +1330,7 @@
           192,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1341,7 +1341,7 @@
           32,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1352,7 +1352,7 @@
           32,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1363,7 +1363,7 @@
           128,
           816
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1374,7 +1374,7 @@
           96,
           1040
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1385,7 +1385,7 @@
           1728,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1396,7 +1396,7 @@
           128,
           96
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [
@@ -1463,7 +1463,7 @@
           0,
           1
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1482,7 +1482,7 @@
           0,
           1
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ]
   },
@@ -1501,24 +1501,13 @@
       {
         "pos": [
           0,
-          0
-        ],
-        "size": [
-          1920,
-          64
-        ],
-        "texture_name": "Green.webp"
-      },
-      {
-        "pos": [
-          0,
           160
         ],
         "size": [
           48,
           192
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1529,7 +1518,7 @@
           32,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1540,7 +1529,7 @@
           96,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1551,7 +1540,7 @@
           48,
           1024
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1562,7 +1551,7 @@
           144,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1573,7 +1562,7 @@
           128,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1584,7 +1573,7 @@
           64,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1595,7 +1584,7 @@
           48,
           736
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1606,7 +1595,7 @@
           1744,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1617,7 +1606,194 @@
           768,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          0,
+          0
+        ],
+        "size": [
+          96,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          96,
+          0
+        ],
+        "size": [
+          96,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          192,
+          0
+        ],
+        "size": [
+          96,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          288,
+          0
+        ],
+        "size": [
+          96,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          384,
+          0
+        ],
+        "size": [
+          64,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          448,
+          0
+        ],
+        "size": [
+          80,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          528,
+          0
+        ],
+        "size": [
+          112,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          640,
+          0
+        ],
+        "size": [
+          96,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          736,
+          0
+        ],
+        "size": [
+          496,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          1232,
+          0
+        ],
+        "size": [
+          80,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          1312,
+          0
+        ],
+        "size": [
+          96,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          1408,
+          0
+        ],
+        "size": [
+          80,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          1488,
+          0
+        ],
+        "size": [
+          128,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          1616,
+          0
+        ],
+        "size": [
+          80,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          1696,
+          0
+        ],
+        "size": [
+          80,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          1776,
+          0
+        ],
+        "size": [
+          64,
+          64
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          1840,
+          0
+        ],
+        "size": [
+          80,
+          64
+        ],
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [
@@ -1739,7 +1915,7 @@
           1,
           1
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1758,7 +1934,7 @@
           1,
           1
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ]
   },
@@ -1783,7 +1959,7 @@
           1696,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1794,7 +1970,7 @@
           128,
           16
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1805,7 +1981,7 @@
           1104,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1816,7 +1992,7 @@
           160,
           16
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1827,7 +2003,7 @@
           576,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1838,7 +2014,7 @@
           112,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1849,7 +2025,7 @@
           32,
           288
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1860,7 +2036,7 @@
           320,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1871,7 +2047,7 @@
           176,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1882,7 +2058,7 @@
           656,
           416
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1893,7 +2069,7 @@
           128,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1904,7 +2080,7 @@
           976,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1915,7 +2091,7 @@
           176,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1926,7 +2102,7 @@
           80,
           128
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1937,7 +2113,7 @@
           64,
           560
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1948,7 +2124,7 @@
           96,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1959,7 +2135,7 @@
           32,
           560
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -1970,7 +2146,18 @@
           32,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          0,
+          64
+        ],
+        "size": [
+          64,
+          560
+        ],
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [
@@ -2147,7 +2334,7 @@
           1,
           0
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2166,7 +2353,7 @@
           1,
           0
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       }
     ]
   },
@@ -2191,7 +2378,7 @@
           512,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2202,7 +2389,7 @@
           368,
           48
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2213,7 +2400,7 @@
           368,
           448
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2224,7 +2411,7 @@
           128,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2235,7 +2422,7 @@
           160,
           32
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2246,18 +2433,7 @@
           96,
           32
         ],
-        "texture_name": "Green.webp"
-      },
-      {
-        "pos": [
-          0,
-          464
-        ],
-        "size": [
-          64,
-          448
-        ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2268,7 +2444,7 @@
           256,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2279,7 +2455,7 @@
           64,
           464
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2290,7 +2466,7 @@
           384,
           128
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2301,7 +2477,7 @@
           80,
           80
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2312,7 +2488,7 @@
           1408,
           16
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2323,7 +2499,7 @@
           160,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2334,7 +2510,7 @@
           64,
           64
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2345,7 +2521,7 @@
           80,
           176
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2356,7 +2532,7 @@
           160,
           272
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2367,7 +2543,7 @@
           144,
           16
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
       },
       {
         "pos": [
@@ -2378,7 +2554,29 @@
           544,
           16
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          0,
+          464
+        ],
+        "size": [
+          64,
+          256
+        ],
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          0,
+          864
+        ],
+        "size": [
+          64,
+          176
+        ],
+        "texture_name": "greentile.png"
       }
     ],
     "spikes": [
@@ -2452,25 +2650,6 @@
     "loaders": [
       {
         "pos": [
-          0,
-          912
-        ],
-        "size": [
-          48,
-          144
-        ],
-        "room_size": [
-          1920,
-          1088
-        ],
-        "room_pos": [
-          2,
-          0
-        ],
-        "texture_name": "Green.webp"
-      },
-      {
-        "pos": [
           1600,
           0
         ],
@@ -2486,7 +2665,26 @@
           2,
           0
         ],
-        "texture_name": "Green.webp"
+        "texture_name": "greentile.png"
+      },
+      {
+        "pos": [
+          0,
+          704
+        ],
+        "size": [
+          48,
+          176
+        ],
+        "room_size": [
+          1920,
+          1088
+        ],
+        "room_pos": [
+          2,
+          0
+        ],
+        "texture_name": "greentile.png"
       }
     ]
   }
