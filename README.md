@@ -35,9 +35,6 @@ All textures are made by [ProbablyADoor](https://github.com/ProbablyaDoor)
 ## Special Thanks
 Thanks to :
 
-[justanothernormalusername](https://github.com/justanothernormalusername)  
-[ProbablyADoor](https://github.com/ProbablyaDoor)  
-[A-Random-Panda](https://github.com/A-Random-Panda)  
-[Shuning Zhang](https://github.com/zhang-shuning) for playtesting
+[justanothernormalusername](https://github.com/justanothernormalusername),[ProbablyADoor](https://github.com/ProbablyaDoor),[A-Random-Panda](https://github.com/A-Random-Panda), and [Shuning Zhang](https://github.com/zhang-shuning) for playtesting.
 
-and especially Shuning for doing the nuitka stuff for me.
+especially Shuning for doing the nuitka stuff for me.
