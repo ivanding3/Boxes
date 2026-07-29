@@ -31,3 +31,10 @@ Minimal AI was used in the creation of this project. Any AI usage was to explain
 
 ## Artwork
 All textures are made by [ProbablyADoor](https://github.com/ProbablyaDoor)
+
+## Special Thanks
+Thanks to :
+
+[justanothernormalusername](https://github.com/justanothernormalusername),[ProbablyADoor](https://github.com/ProbablyaDoor),[A-Random-Panda](https://github.com/A-Random-Panda), and [Shuning Zhang](https://github.com/zhang-shuning) for playtesting.
+
+especially Shuning for doing the nuitka stuff for me.
